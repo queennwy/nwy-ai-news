@@ -2,9 +2,8 @@ name: AI Daily News Digest
 
 on:
   schedule:
-    # 23:55 HKT = 15:55 UTC
     - cron: '55 15 * * *'
-  workflow_dispatch:  # 手動觸發測試用
+  workflow_dispatch:
 
 jobs:
   send-digest:
@@ -24,7 +23,7 @@ jobs:
       - name: Run AI News Digest
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_ADDRESS:     ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD:${{ secrets.GMAIL_APP_PASSWORD }}
-          RECIPIENT_EMAIL:   ${{ secrets.RECIPIENT_EMAIL }}
-        run: python ai_news_digest.py
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: python "ai_news_digest (1).py"
